@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+venv/
+data/database/embeddings.pkl
+data/database/metadata.json
+data/logs/*.log*
+data/models/*
+data/images/*
+!data/models/.gitkeep
+!data/images/.gitkeep
+!data/database/.gitkeep
+!data/logs/.gitkeep

@@ -1,0 +1,54 @@
+app:
+  name: Smart Human face recognition system
+  version: 1.0.0
+  window_width: 1200
+  window_height: 750
+  theme: dark
+  color_theme: blue
+paths:
+  database_dir: data/database
+  embeddings_file: data/database/embeddings.pkl
+  metadata_file: data/database/metadata.json
+  images_dir: data/images
+  models_dir: data/models
+  logs_dir: data/logs
+face_analysis:
+  model_name: buffalo_l
+  providers:
+  - CPUExecutionProvider
+  detection_size:
+  - 640
+  - 640
+  min_face_confidence: 0.5
+enrollment:
+  min_images: 2
+  recommended_images: 8
+  max_images: 20
+recognition:
+  similarity_threshold: 0.45
+  recognition_smoothing_window: 5
+  unknown_label: Unknown
+distance:
+  known_face_width_cm: 14.0
+  focal_length_px: 615.0
+  too_close_max_cm: 25
+  ideal_min_cm: 25
+  ideal_max_cm: 50
+  too_far_max_cm: 100
+camera:
+  device_index: 0
+  frame_width: 960
+  frame_height: 540
+  target_fps: 30
+robot:
+  simulate_hardware: true
+  serial_port: COM3
+  baud_rate: 9600
+  center_dead_zone_px: 60
+  forward_distance_cm: 100
+  backward_distance_cm: 50
+logging:
+  level: INFO
+  max_bytes: 1048576
+  backup_count: 5
+  log_filename: visionguard.log
